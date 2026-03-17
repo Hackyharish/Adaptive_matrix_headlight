@@ -250,7 +250,7 @@ Dead-zone: 1.5°, min update interval: 50 ms
 ### Installation
 
     # 1. Clone the repository
-    git clone [INSERT_YOUR_REPOSITORY_URL_HERE]
+    git clone https://github.com/Hackyharish/Adaptive_matrix_headlight.git
     cd adaptive-headlight-system
 
     # 2. Install Python dependencies
