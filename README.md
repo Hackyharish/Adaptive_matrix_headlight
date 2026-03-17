@@ -27,6 +27,7 @@ A proof-of-concept adaptive front-lighting system built entirely on commodity em
 * [Limitations & Future Work](#️-limitations--future-work)
 * [Authors](#-authors)
 * [References](#-references)
+* [Contact](#-contact)
 
 ## 🔍 Overview
 Road accidents caused by high-beam glare are a persistent safety concern — NHTSA data shows that while only 25% of travel occurs at night, approximately 50% of all traffic fatalities happen during dark hours. In India alone, over 224,000 road crashes occurred between 6 PM and 6 AM in a single year.
@@ -70,19 +71,19 @@ This project demonstrates that the full sensing → inference → actuation pipe
 The system operates as a closed-loop pipeline:
 
     ┌─────────────────────────────────────────────────────────────────┐
-    │                        MAIN LOOP (30 fps)                        │
-    │                                                                   │
-    │  Frame Capture → Luminance Assessment → Adaptive Enhancement     │
-    │        ↓                                                          │
-    │  TFLite Inference (every 2nd frame) → NMS                        │
-    │        ↓                                                          │
-    │  BBox → Column Mapping → Temporal Voting → LED Shadow Render     │
-    │        ↓                                                          │
-    │  Auto-Brightness                                                  │
+    │                        MAIN LOOP (30 fps)                       │
+    │                                                                 │
+    │  Frame Capture → Luminance Assessment → Adaptive Enhancement    │
+    │        ↓                                                        │
+    │  TFLite Inference (every 2nd frame) → NMS                       │
+    │        ↓                                                        │
+    │  BBox → Column Mapping → Temporal Voting → LED Shadow Render    │
+    │        ↓                                                        │
+    │  Auto-Brightness                                                │
     └─────────────────────────────────────────────────────────────────┘
 
     ┌─────────────────────┐        ┌──────────────────────┐
-    │    IMU THREAD        │        │  KEYBOARD LISTENER   │
+    │    IMU THREAD       │        │  KEYBOARD LISTENER   │
     │  MPU6050 @ 20 Hz    │        │  ← →  Pan Servo      │
     │  EMA Filter → Tilt  │        │  C = Centre, Q = Quit│
     └─────────────────────┘        └──────────────────────┘
@@ -194,10 +195,11 @@ A column is activated in the shadow set only if it appeared in ≥ 3 of the last
 
 **5. LED Shadow Rendering**
 
-    P(row, col) = ON   if row in {3, 4}     ← Protected central beam (ALWAYS ON)
+    P(row, col) = ON   if row in {3, 4}      ← Protected central beam (ALWAYS ON)
                 = ON   if no vehicle detected
                 = ON   if col not in shadow_set
                 = OFF  if col in shadow_set AND vehicle detected
+
 
 Rows 3 and 4 (0-indexed) form a permanently protected central strip ensuring minimum safe forward illumination is never interrupted.
 
@@ -205,6 +207,7 @@ Rows 3 and 4 (0-indexed) form a permanently protected central strip ensuring min
 
     pitch = atan2(ay, sqrt(ax^2 + az^2)) * (180/pi)
     theta_filtered[n] = 0.35 * pitch[n] + 0.65 * theta_filtered[n-1]
+
 
 Dead-zone: 1.5°, min update interval: 50 ms
 
@@ -319,10 +322,10 @@ Key parameters in `main.py`:
 
 | Name | Institution |
 | :--- | :--- |
-| [Aryan Jaljith]([INSERT_ARYAN_GITHUB_URL_HERE]) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
-| [Harish R](https://github.com/Hackyharish) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
-| [Karthik K]([INSERT_KARTHIK_GITHUB_URL_HERE]) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
-| [Shri Monesh]([INSERT_SHRI_GITHUB_URL_HERE]) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
+| [Aryan Jaljith](https://www.linkedin.com/in/aryan-jaljith-64283b240/) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
+| [Harish R](https://www.linkedin.com/in/harish-r-8b68a333b/) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
+| [Karthik K](https://www.linkedin.com/in/karthik-krishnamurthi/) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
+| [Shri Monesh](https://www.linkedin.com/in/shrimonesh2212/) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
 
 
 ## 📚 References
@@ -335,6 +338,15 @@ Key parameters in `main.py`:
 7. InvenSense Inc., "MPU-6000 and MPU-6050 Product Specification," Rev. 3.4, 2013.
 8. R. Hull, "luma.led_matrix," GitHub, https://github.com/rm-hull/luma.led_matrix
 
-<div align="center">Made with ❤️ at Amrita School of Engineering, Coimbatore>
+
+## 📬 Contact
+For inquiries, discussions, or collaboration opportunities, feel free to reach out to the team:
+
+* **Aryan Jaljith** - cb.en.u4eee23105@cb.students.amrita.edu
+* **Harish R** - cb.en.u4eee23112@cb.students.amrita.edu
+* **Karthik K** - cb.en.u4eee23116@cb.students.amrita.edu
+* **Shri Monesh** - cb.en.u4elc23053@cb.students.amrita.edu
+
+<div align="center">Made with ❤️ at Amrita School of Engineering, Coimbatore
 
 </div>
