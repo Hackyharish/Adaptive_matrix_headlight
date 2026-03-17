@@ -1,0 +1,7 @@
+ai-edge-litert
+luma.led-matrix
+gpiozero
+mpu6050-raspberrypi
+opencv-python
+numpy
+pynput
