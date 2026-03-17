@@ -251,7 +251,6 @@ Dead-zone: 1.5°, min update interval: 50 ms
 
     # 1. Clone the repository
     git clone https://github.com/Hackyharish/Adaptive_matrix_headlight.git
-    cd adaptive-headlight-system
 
     # 2. Install Python dependencies
     pip install -r requirements.txt
@@ -261,7 +260,7 @@ Dead-zone: 1.5°, min update interval: 50 ms
 
     # 4. Download the TFLite model
     # Place detect.tflite and labelmap.txt in the model/ directory
-    # (See model/README.md for download instructions)
+    # (See Model/README.md for download instructions)
 
     # 5. Run the system
     python main.py
