@@ -46,23 +46,24 @@ This project demonstrates that the full sensing → inference → actuation pipe
 ## 🎬 Demo
 
 <div align="center">
-
-[INSERT_VIDEO_DEMO_URL_HERE]
-
+  <a href="https://youtu.be/yYSsFPCLtU8?si=8czIA3FAv6s1ahja">
+    <img src="https://img.youtube.com/vi/yYSsFPCLtU8/maxresdefault.jpg" alt="Adaptive Headlight System Demo" width="600"/>
+  </a>
+  <br/><sub>Click the image to watch the video demonstration</sub>
 </div>
 
 ## 🏗️ System Architecture
 ### Block Diagram
 
 <div align="center">
-<img src="[INSERT_BLOCK_DIAGRAM_IMAGE_PATH_HERE]" alt="System block diagram" width="600"/>
+<img src="system_diagram_page-0001.jpg" alt="System block diagram" width="600"/>
 <br/><sub>Fig. 1 — Hardware architecture: Raspberry Pi 4 orchestrating camera, IMU, servos, and LED array</sub>
 </div>
 
 ### Processing Pipeline
 
 <div align="center">
-<img src="[INSERT_PIPELINE_IMAGE_PATH_HERE]" alt="Processing pipeline flowchart" width="500"/>
+<img src="Flow_diagram_page-0001.jpg" alt="Processing pipeline flowchart" width="500"/>
 <br/><sub>Fig. 2 — Closed-loop pipeline: Frame Capture → Enhancement → TFLite Inference → NMS → Column Mapping → Temporal Voting → LED Render</sub>
 </div>
 
@@ -91,14 +92,14 @@ The system operates as a closed-loop pipeline:
 ### Complete Assembly
 
 <div align="center">
-<img src="[INSERT_HARDWARE_ASSEMBLY_IMAGE_PATH_HERE]" alt="Complete hardware assembly" width="500"/>
+<img src="Hardware_setup.jpeg" alt="Complete hardware assembly" width="500"/>
 <br/><sub>Fig. 3 — Complete proof-of-concept prototype assembly</sub>
 </div>
 
 ### 3D-Printed Headlight Housing
 
 <div align="center">
-<img src="[3D_print.png]" alt="3D-printed headlight housing" width="400"/>
+<img src= "3D_print.png" alt="3D-printed headlight housing" width="400"/>
 <br/><sub>Fig. 4 — Custom in-house FDM-printed headlight housing integrating both LED modules</sub>
 </div>
 
@@ -224,7 +225,7 @@ Dead-zone: 1.5°, min update interval: 50 ms
 ### Software Preview
 
 <div align="center">
-<img src="[INSERT_SOFTWARE_PREVIEW_IMAGE_PATH_HERE]" alt="Real-time software preview" width="500"/>
+<img src="test_image.png" alt="Real-time software preview" width="500"/>
 <br/><sub>Fig. 5 — Live preview: detection bounding boxes, shadow column overlay, LED grid state, and HUD (FPS, tilt, pan, mode)</sub>
 </div>
 
@@ -316,23 +317,12 @@ Key parameters in `main.py`:
 
 ## 👥 Authors
 
-| Name | Role | Institution |
-| :--- | :--- | :--- |
-| [Aryan Jaljith]([INSERT_ARYAN_GITHUB_URL_HERE]) | Lead Developer | Dept. of EEE, Amrita School of Engineering, Coimbatore |
-| [Harish R](https://github.com/Hackyharish) | Hardware & Integration | Dept. of EEE, Amrita School of Engineering, Coimbatore |
-| [Karthik K]([INSERT_KARTHIK_GITHUB_URL_HERE]) | Software Pipeline | Dept. of EEE, Amrita School of Engineering, Coimbatore |
-| [Shri Monesh]([INSERT_SHRI_GITHUB_URL_HERE]) | 3D Design & Assembly | Dept. of EEE, Amrita School of Engineering, Coimbatore |
-
-## 📄 Citation
-If you use this work, please cite:
-
-    @inproceedings{jaljith2024adaptive,
-      title     = {An Edge-Based Adaptive Headlight System with Real-Time Vehicle Detection and Active Stabilization},
-      author    = {Jaljith, Aryan and R, Harish and K, Karthik and Monesh, Shri},
-      booktitle = {[Conference/Journal Name]},
-      year      = {2024},
-      institution = {Amrita School of Engineering, Coimbatore, Amrita Vishwa Vidyapeetham}
-    }
+| Name | Institution |
+| :--- | :--- |
+| [Aryan Jaljith]([INSERT_ARYAN_GITHUB_URL_HERE]) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
+| [Harish R](https://github.com/Hackyharish) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
+| [Karthik K]([INSERT_KARTHIK_GITHUB_URL_HERE]) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
+| [Shri Monesh]([INSERT_SHRI_GITHUB_URL_HERE]) | Dept. of EEE, Amrita School of Engineering, Coimbatore |
 
 
 ## 📚 References
@@ -345,7 +335,6 @@ If you use this work, please cite:
 7. InvenSense Inc., "MPU-6000 and MPU-6050 Product Specification," Rev. 3.4, 2013.
 8. R. Hull, "luma.led_matrix," GitHub, https://github.com/rm-hull/luma.led_matrix
 
-<div align="center">Made with ❤️ at Amrita School of Engineering, Coimbatore
-<sub>Amrita Vishwa Vidyapeetham, India</sub>
+<div align="center">Made with ❤️ at Amrita School of Engineering, Coimbatore>
 
 </div>
